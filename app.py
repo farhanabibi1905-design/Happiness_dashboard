@@ -7,7 +7,7 @@ import plotly.express as px
 import numpy as np
 
 # 1 Load dataset
-df = pd.read_csv(r'D:\a_CFP_Farhana\mentor_ssions\Dataset\happiness report\happiness_combined_cleann.csv')
+df = pd.read_csv('happiness_combined_cleann.csv')
 
 st.set_page_config(layout="wide")
 st.title(" World Happiness Dashboard (2015-2019)")
@@ -111,4 +111,5 @@ st.markdown("---")
 st.subheader(f"Top {top_n} Countries by {selected_factor} ({selected_year})")
 factor_top = year_df.sort_values(selected_factor, ascending=False).head(top_n)
 st.dataframe(factor_top[['Country', selected_factor, 'Happiness_Score']])
+
 st.markdown("---")
